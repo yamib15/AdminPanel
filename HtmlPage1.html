@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <script src="Scripts/angular.min.js"></script>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="products-display.css" rel="stylesheet" />
+    <script src="product.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <title></title>
+    <style>
+
+        .gallery {
+            border: 2px solid;
+            border-color: lightgrey;
+            border-radius: 2px;
+            margin: 20px;
+            float: left;
+        }
+
+            .gallery:hover {
+                border: 2px solid black;
+                border-radius: 2px;
+            }
+
+            .gallery img {
+                padding: 10px;
+                width: 250px;
+                height: 250px;
+                border-bottom: thin;
+            }
+
+        .name {
+            font-family: Calibri;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .price {
+            font-size: medium;
+            font: bold;
+            text-align: center;
+        }
+
+        .gallery a {
+            top: 0;
+            right: 0;
+            color: red;
+            font-style: none;
+        }
+
+        .top_bar {
+            height: 13%;
+            min-height: 100px;
+            background-color: #111;
+            padding: 20px 20px;
+            border-bottom: 1px solid white;
+            width: 100%;
+            position: fixed;
+            z-index: 10000 !important;
+        }
+
+        .top_bar h1 {
+            color: white;
+        }
+
+        .sidenav {
+            height: 90%;
+            width: 21%;
+            min-width: 160px;
+            position: fixed;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+            .sidenav a {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                font-size: 20px;
+                color: #818181;
+                display: block;
+                background-color: #222;
+                border-bottom: 1px solid black;
+            }
+
+                /* When you mouse over the navigation links, change their color */
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                    background-color: #333; /* Black */
+                }
+
+            .sidenav ul {
+                text-decoration: none;
+            }
+
+        .content {
+            margin-left: 20%; /* Same as the width of the sidebar */
+            padding: 40px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+                .sidenav a {
+                    font-size: 18px;
+                }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top_bar">
+        <h1><i class="fa fa-user"></i>&nbsp;&nbsp;Admin Panel</h1>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="sidenav">
+        <a href="dashboard.html?dc=dashboard"><i class="fa fa-tachometer-alt"></i>&nbsp;&nbsp;Dashboard</a>
+        <a href="HtmlPage1.html"><i class="fa fa-boxes"></i>&nbsp;&nbsp;Products</a>
+        <a href="dashboard.html?dc=products"><i class="fa fa-boxes"></i>&nbsp;&nbsp;Products</a>
+        <a href="login.html"><i class="fa fa-sign-out-alt"></i>&nbsp;&nbsp;Sign Out</a>
+    </div>
+
+    <div class="content">
+        <div ng-controller="myCtrl">
+            <div class="container">
+
+
+                <div style="list-style-type:none" ng-repeat="product in products">
+                    <div class="gallery">
+                        <button class="btn btn-danger btn-sm float-right" ng-model="delete()">X</button>
+                        <!--<input type="checkbox" ng-model="product.check" class="m-2" />-->
+                        <img ng-src="{{product.imageurl}}" />
+                        <h3 class="name">{{product.name}}</h3>
+                        <h1 class="price">{{product.price | currency}}</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

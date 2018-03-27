@@ -1,0 +1,35 @@
+﻿body {
+    background-color: #ff0;
+}
+.logo {
+    padding: 15px 0;
+    align-content : center;
+    margin-left: 130px;
+    font-size: 25px;
+    color: #aaaaaa;
+    font-weight: bold;
+    
+}
+.content_content {
+    width: 100%;
+    min-height: 500px;
+    background-image: url("images/images.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.block {
+
+    background-color:white;
+    border-style: solid;
+    border-color: lightgrey;
+    border-radius: 5px;
+    float: right;
+    padding: 20px;
+    width: 400px !important;
+    box-sizing : border-box;
+}
+
+.label {
+    font-size: large;
+    font-weight: 500;
+}

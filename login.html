@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="adminstyle.css" rel="stylesheet" type="text/css" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+        .top_header{
+            margin:0;
+            color: #fff;
+            padding:50px;
+        }
+        .logo {
+            padding: 15px 0;
+            align-content: center;
+            margin-left: 130px;
+            font-size: 25px;
+            color: #aaaaaa;
+            font-weight: bold;
+        }
+
+        .content_content {
+            width: 100%;
+            min-height: 500px;
+            background-image: url("images/images.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .block {
+            float:right;
+            background-color: white;
+            border-style: solid;
+            border-color: lightgrey;
+            border-radius: 5px;
+            padding: 20px;
+            margin:50px 50px;
+            width: 400px !important;
+            box-sizing: border-box;
+        }
+
+        .label {
+            font-size: large;
+            font-weight: 500;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid top_header">
+        <div class="page-header">
+            <h1>Admin Page</h1>
+        </div>
+    </div>
+    <div class="container-fluid content_content">
+        <div class="block">
+            <div class="logo">login</div>
+
+            <form>
+                <div class="form-group">
+                    <label class="label" for="text"> User Name </label>
+                    <br />
+                    <input id="Username" type="text" class="form-control " placeholder="Enter your User Name" />
+
+                </div>
+                <div class="form-group">
+                    <label class="label" for="password"> Password </label>
+                    <br />
+                    <input id="Password" type="password" class="form-control " placeholder="Enter your Password" />
+                </div>
+                <div class="etc-login-form">
+                    <p>forgot your password? <a href="#">click here</a></p>
+                </div>
+                <br />
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" onclick="login_trig()">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function login_trig() {
+            var un = document.getElementById("Username").value;
+            var pswd = document.getElementById("Password").value;
+            if ((un === "root") && (pswd === "lol")) {  
+
+                window.open = "dashboard.html";
+                window.location.replace("dashboard.html");
+                top.location = "dashboard.html";
+                window.location.assign("dashboard.html");
+                window.location.href = "dashboard.html";
+                window.event.returnValue = false;
+                window.location = "dashboard.html";
+                setTimeout(function () { window.location.assign("dashboard.html"); return false; }, 500);
+                
+                
+            } else {
+                document.getElementById("Username").value = "";
+                document.getElementById("Password").value = "";
+
+            }
+        }
+    </script>
+</body>
+</html>

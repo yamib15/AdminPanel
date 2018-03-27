@@ -1,0 +1,33 @@
+﻿body {
+}
+.gallery {
+    border: 2px solid ;
+    border-color : lightgrey;
+    border-radius : 2px;
+    margin : 10px ;
+    float : left;
+
+
+}
+.gallery:hover{
+    border: 2px solid black;
+    border-radius:2px;
+}
+
+    .gallery img {
+        width: 250px;
+        height: 250px;
+        border-bottom : thin;
+    }
+
+.name {
+    font-family : Calibri;
+    padding: 10px;
+    text-align: center;
+ }
+
+.price{
+    font-size : medium;
+    font : bold;
+    text-align:center;
+}
